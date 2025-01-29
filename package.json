@@ -1,0 +1,15 @@
+{
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.2.0",
+    "@eslint/js": "^9.19.0",
+    "cucumber": "^6.0.7",
+    "eslint": "^9.19.0",
+    "globals": "^15.14.0",
+    "jest": "^29.7.0"
+  },
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint .",
+    "format": "prettier --writte ."
+  }
+}

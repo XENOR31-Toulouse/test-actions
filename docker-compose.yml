@@ -1,0 +1,40 @@
+# docker compose node.js and mongodb
+version: '3.1'
+
+services:
+  nodejs:
+    image: node:14
+    container_name: nodejs
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    depends_on:
+      - mongodb
+    networks:
+      - app-network
+
+  mongodb:
+    image: mongo:4.4
+    container_name: mongodb
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb-data:/data/db
+    networks:
+      - app-network
+
+volumes:
+  mongodb-data:
+
+networks:
+  app-network:
+    driver: bridge
