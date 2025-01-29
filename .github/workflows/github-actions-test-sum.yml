@@ -19,13 +19,14 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '14'
+        node-version: '18'
+        cache: 'npm'
 
     - name: Install dependencies
-      run: npm install
+      run: npm ci
 
     - name: Run unit tests
       run: npm test
 
     - name: Run linter
-      run: npm run lint
+      run: npm run lint --if-present
