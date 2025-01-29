@@ -1,7 +1,6 @@
 // ecrire un test qui fonctionne et un test qui echoue pour la function sum grace a jest mock
 
-import sum from './index';
-import { test, expect } from '@jest/globals';
+const sum = require('./index');
 
 
 
