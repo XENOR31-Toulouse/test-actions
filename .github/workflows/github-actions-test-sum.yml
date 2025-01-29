@@ -1,5 +1,5 @@
 name: test and Check if its clean
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: ${{ github.actor }} test if its clean 🚀
 on: [push]
 jobs:
   build:
