@@ -1,6 +1,6 @@
-const { Given, When, Then } = require('@cucumber/cucumber');
-const sum = require('../../index').default;
-const assert = require('assert'); // Utilisation de l'assertion de Node.js
+import { Given, When, Then } from '@cucumber/cucumber';
+import sum from '../../index';
+import { strictEqual } from 'assert'; // Utilisation de l'assertion de Node.js
 
 Given('I have two numbers {int} and {int}', function (a, b) {
     this.a = a;
@@ -12,5 +12,5 @@ When('I add the two numbers', function () {
 });
 
 Then('the result should be {int}', function (expectedResult) {
-    assert.strictEqual(this.result, expectedResult); // Assertion correcte en Node.js
+    strictEqual(this.result, expectedResult); // Assertion correcte en Node.js
 });
